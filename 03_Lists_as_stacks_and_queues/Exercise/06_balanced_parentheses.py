@@ -20,4 +20,3 @@ if dq:
     print('NO')
 else:
     print('YES')
-    
