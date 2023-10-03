@@ -30,6 +30,6 @@ while sd != 5 and milk and choco:
         milk.rotate(-1)
         choco[-1] -= 5
 
-print("Great! You made all the chocolate milkshakes needed!") if sd >= 5 else print("Not enough milkshakes.")
-print(f"Chocolate: {', '.join(map(str, choco))}") if choco else print("Chocolate: empty")
-print(f"Milk: {', '.join(map(str, milk))}") if milk else print("Milk: empty")
+print("Great! You made all the chocolate milkshakes needed!" if sd >= 5 else "Not enough milkshakes.")
+print(f"Chocolate: {', '.join(map(str, choco))}" if choco else "Chocolate: empty")
+print(f"Milk: {', '.join(map(str, milk))}" if milk else "Milk: empty")
