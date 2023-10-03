@@ -4,8 +4,7 @@ choco, milk, sd = dq([int(x) for x in input().split(', ')]), dq([int(x) for x in
 
 while sd != 5 and milk and choco:
     if milk[0] <= 0 and choco[-1] <= 0:
-        milk.popleft()
-        choco.pop()
+        milk.popleft(); choco.pop()
         continue
     if choco[-1] <= 0:
         choco.pop()
@@ -18,12 +17,9 @@ while sd != 5 and milk and choco:
             break
         continue
     if choco[-1] == milk[0]:
-        sd += 1
-        choco.pop()
-        milk.popleft()
+        sd += 1; choco.pop(); milk.popleft()
     else:
-        milk.rotate(-1)
-        choco[-1] -= 5
+        milk.rotate(-1); choco[-1] -= 5
 print("Great! You made all the chocolate milkshakes needed!" if sd >= 5 else "Not enough milkshakes.")
 print(f"Chocolate: {', '.join(map(str, choco))}" if choco else "Chocolate: empty")
 print(f"Milk: {', '.join(map(str, milk))}" if milk else "Milk: empty")
