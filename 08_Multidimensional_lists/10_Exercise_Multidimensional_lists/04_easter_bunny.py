@@ -143,10 +143,10 @@ test prints
 
 
 """
-87/100 
+100/100  functions
 """
 # def find_max_direction(field, bunny_location, field_size):
-#     max_sum = 0
+#     max_sum = -9999
 #     max_sum_locations = []
 #     max_direction = ''
 #
