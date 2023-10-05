@@ -3,7 +3,7 @@ field = [input().split() for _ in range(field_size)]
 bunny_location = []
 rn = 0
 cn = 0
-max_sum = -9999
+max_sum = float('-inf')
 max_sum_locations = []
 max_direction = ''
 temp_sum = 0
@@ -146,7 +146,7 @@ test prints
 100/100  functions
 """
 # def find_max_direction(field, bunny_location, field_size):
-#     max_sum = -9999
+#     max_sum = float('-inf')
 #     max_sum_locations = []
 #     max_direction = ''
 #
