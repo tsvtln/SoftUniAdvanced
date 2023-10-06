@@ -37,5 +37,7 @@ while email != 'End':
         EmailValidator.check_length(email)
         EmailValidator.check_at_symbol(email)
         EmailValidator.check_domains(email)
-    except EmailValidationError as e:
+    except (NameTooShortError, MustContainAtSymbolError, InvalidDomainError) as e:
         print({e})
+    else:
+        print("Email is valid")
