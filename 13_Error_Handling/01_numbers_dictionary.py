@@ -1,22 +1,45 @@
-numbers_dictionary = {}
+def print_alphabetic_error():
+    print("First value must be an alphabetic entry.")
 
-line = input()
 
+numbers_dictionary, line = {}, ''
+
+# Search module
 while line != "Search":
-    number_as_string = line
-    number = int(input())
-    numbers_dictionary[number_as_string] = number
+    line = input()
+    if line == 'Search':
+        continue
+    if line.isalpha():
+        try:
+            numbers_dictionary[line] = int(input())
+        except ValueError:
+            print('The variable number must be an integer')
+    else:
+        print_alphabetic_error()
 
-line = input()
-
+# Remove module
 while line != "Remove":
-    searched = line
-    print(numbers_dictionary[searched])
+    line = input()
+    if line == 'Remove':
+        continue
+    if not line.isalpha():
+        print_alphabetic_error()
+        continue
+    elif line in numbers_dictionary.keys():
+        print(numbers_dictionary[line])
+    else:
+        print("Value not found.")
 
-line = input()
-
+# End module
 while line != "End":
-    searched = line
-    del numbers_dictionary[searched]
+    line = input()
+    if line == 'End':
+        continue
+    if not line.isalpha():
+        print_alphabetic_error()
+    try:
+        del numbers_dictionary[line]
+    except KeyError:
+        print("Number does not exist in dictionary")
 
 print(numbers_dictionary)
