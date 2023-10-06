@@ -1,5 +1,5 @@
 def print_alphabetic_error():
-    print("First value must be an alphabetic entry.")
+    print("Value must be an alphabetic entry.")
 
 
 numbers_dictionary, line = {}, ''
