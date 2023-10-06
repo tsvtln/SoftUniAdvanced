@@ -1,4 +1,10 @@
-class EmailValidationError(Exception):
+class NameTooShortError(Exception):
+    pass
+
+class MustContainAtSymbolError(Exception):
+    pass
+
+class InvalidDomainError(Exception):
     pass
 
 
@@ -6,19 +12,19 @@ class EmailValidator:
     @staticmethod
     def check_length(email):
         if len(email.split("@")[0]) <= 4:
-            raise EmailValidationError("Name must be more than 4 letters.")
+            raise NameTooShortError("Name must be more than 4 letters.")
 
     @staticmethod
     def check_at_symbol(email):
         if '@' not in email:
-            raise EmailValidationError("Email must contain @")
+            raise MustContainAtSymbolError("Email must contain @")
 
     @staticmethod
     def check_domains(email):
         valid_domains = ['com', 'bg', 'org', 'net']
         get_domain = email.split('.')
         if get_domain[-1] not in valid_domains:
-            raise EmailValidationError("Domain must be one of the following: .com, .bg, .org, .net")
+            raise InvalidDomainError("Domain must be one of the following: .com, .bg, .org, .net")
 
 
 email = ''
