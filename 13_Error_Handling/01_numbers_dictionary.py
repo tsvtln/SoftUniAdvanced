@@ -25,10 +25,8 @@ while line != "Remove":
     if not line.isalpha():
         print_alphabetic_error()
         continue
-    elif line in numbers_dictionary.keys():
-        print(numbers_dictionary[line])
-    else:
-        print("Value not found.")
+    print(numbers_dictionary[line] if line in numbers_dictionary.keys() else "Value not found.")
+
 
 # End module
 while line != "End":
@@ -37,6 +35,7 @@ while line != "End":
         continue
     if not line.isalpha():
         print_alphabetic_error()
+        continue
     try:
         del numbers_dictionary[line]
     except KeyError:
