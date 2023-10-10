@@ -42,4 +42,4 @@ while command != 'End':
     elif 'Replace' in command:
         print("An error occurred") if Manipulator().check_file(command) == 'Failed' else Manipulator().replace(command)
     elif 'Delete' in command:
-        Manipulator().delete(command)
+        print("An error occurred") if Manipulator().check_file(command) == 'Failed' else Manipulator().delete(command)
