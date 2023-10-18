@@ -15,8 +15,4 @@ while dq and count < len(dq) / 2:
     else:
         dq.rotate(-1)
         count += 1
-
-if dq:
-    print('NO')
-else:
-    print('YES')
+print('NO' if dq else 'YES')
