@@ -36,10 +36,10 @@ while command != 'End':
     if command == 'End':
         continue
     if 'Create' in command:
-        Manipulator().create(command)
+        Manipulator.create(command)
     elif 'Add' in command:
-        Manipulator().add(command)
+        Manipulator.add(command)
     elif 'Replace' in command:
-        print("An error occurred") if Manipulator().check_file(command) == 'Failed' else Manipulator().replace(command)
+        print("An error occurred") if Manipulator.check_file(command) == 'Failed' else Manipulator.replace(command)
     elif 'Delete' in command:
-        print("An error occurred") if Manipulator().check_file(command) == 'Failed' else Manipulator().delete(command)
+        print("An error occurred") if Manipulator.check_file(command) == 'Failed' else Manipulator.delete(command)
